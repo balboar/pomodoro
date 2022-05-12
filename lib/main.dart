@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     _stopWatchTimer =
         Provider.of<PomoTimer>(context, listen: false).stopWatchTimer;
-    _stopWatchTimer!.setPresetSecondTime(5);
+    _stopWatchTimer!.setPresetMinuteTime(25);
     super.initState();
   }
 

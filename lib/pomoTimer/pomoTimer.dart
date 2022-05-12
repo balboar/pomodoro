@@ -44,23 +44,23 @@ class PomoTimer extends ChangeNotifier {
     switch (_state) {
       case PomoState.running:
         if (numberOfBreaks < 3) {
-          _stopWatchTimer.setPresetSecondTime(5);
+          _stopWatchTimer.setPresetMinuteTime(shortBreakTime);
           _state = PomoState.shortBreak;
         } else {
-          _stopWatchTimer.setPresetSecondTime(15);
+          _stopWatchTimer.setPresetMinuteTime(longBreakTime);
           _state = PomoState.longBreak;
         }
         numberOfPomodoros++;
 
         break;
       case PomoState.longBreak:
-        _stopWatchTimer.setPresetSecondTime(25);
+        _stopWatchTimer.setPresetMinuteTime(workTime);
 
         _state = PomoState.running;
         numberOfBreaks++;
         break;
       case PomoState.shortBreak:
-        _stopWatchTimer.setPresetSecondTime(25);
+        _stopWatchTimer.setPresetMinuteTime(workTime);
         _state = PomoState.running;
         numberOfBreaks++;
         break;
